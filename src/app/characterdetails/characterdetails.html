@@ -1,0 +1,33 @@
+<div class="page">
+  <a class="back" routerLink="/">Back to Characters</a>
+
+@if (character(); as c) {
+  <div class="detail-card">
+    <img
+      [src]="c.image || 'https://placehold.co/300x400?text=No+Image'"
+      [alt]="c.name"
+    />
+
+    <div class="detail-info">
+      <h1>{{ c.name }}</h1>
+
+      <table>
+        <tr><td>Species</td><td>{{ c.species }}</td></tr>
+        <tr><td>House</td><td>{{ c.house || 'None' }}</td></tr>
+        <tr><td>Wizard</td><td>{{ c.wizard ? 'Yes' : 'No' }}</td></tr>
+        <tr><td>Ancestry</td><td>{{ c.ancestry || 'Unknown' }}</td></tr>
+        <tr><td>Actor</td><td>{{ c.actor || 'Unknown' }}</td></tr>
+
+        <tr><td colspan="2" class="wand-header">Wand</td></tr>
+        <tr><td>Wood</td><td>{{ c.wand?.wood || 'Unknown' }}</td></tr>
+        <tr><td>Core</td><td>{{ c.wand?.core || 'Unknown' }}</td></tr>
+        <tr>
+          <td>Length</td>
+          <td>{{ c.wand?.length ? c.wand.length + '"' : 'Unknown' }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+} @else {
+  <p class="loading">Loading...</p>
+}

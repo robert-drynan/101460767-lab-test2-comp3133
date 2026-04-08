@@ -1,9 +1,8 @@
 <div class="page">
   <h1>Harry Potter Characters</h1>
-  <p>Count: {{ characters().length }}</p>
   <div class="grid">
     @for (character of characters(); track character.id) {
-      <div class="card">
+      <div class="card" [routerLink]="['/character', character.id]">
         <img
           [src]="character.image || 'https://placehold.co/150x200?text=No+Image'"
           [alt]="character.name"

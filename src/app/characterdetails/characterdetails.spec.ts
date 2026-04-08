@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Characterfilter } from './characterfilter';
 
-describe('Characterfilter', () => {
-  let component: Characterfilter;
-  let fixture: ComponentFixture<Characterfilter>;
+import { Characterdetails } from './characterdetails';
+
+describe('Characterdetails', () => {
+  let component: Characterdetails;
+  let fixture: ComponentFixture<Characterdetails>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Characterfilter],
+      imports: [Characterdetails],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Characterfilter);
+    fixture = TestBed.createComponent(Characterdetails);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

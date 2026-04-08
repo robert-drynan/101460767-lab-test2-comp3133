@@ -1,1 +1,27 @@
-<p>characterfilter works!</p>
+<div class="page">
+  <h1>Filter by House</h1>
+
+  <div class="filter-bar">
+    <select (change)="onHouseChange($any($event.target).value)">
+      <option value="">-- Select a House --</option>
+      @for (house of houses; track house) {
+        <option [value]="house">{{ house }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="grid">
+    @for (character of characters(); track character.id) {
+      <div class="card">
+        <img
+          [src]="character.image || 'https://placehold.co/150x200?text=No+Image'"
+          [alt]="character.name"
+        />
+        <div class="info">
+          <h2>{{ character.name }}</h2>
+          <p>{{ character.house || 'No House' }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

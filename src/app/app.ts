@@ -1,14 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Characterlist } from './characterlist/characterlist';
+//import { Characterlist } from './characterlist/characterlist';
+//import { Characterfilter } from './characterfilter/characterfilter';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Characterlist],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('101460767-lab-test2-comp3133');
 }

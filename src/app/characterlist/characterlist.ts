@@ -1,24 +1,24 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
+import { CharacterService } from '../service/character.service';
+import { Character } from '../model/character.interface';
 
 @Component({
   selector: 'app-characterlist',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './characterlist.html',
   styleUrl: './characterlist.css',
 })
+//exports the character list
 export class Characterlist implements OnInit {
-  characters = signal<any[]>([]);
+  characters = signal<Character[]>([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private characterService: CharacterService) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://hp-api.onrender.com/api/characters').subscribe({
-      next: (data) => {
-        this.characters.set(data);
-        console.log('Set characters:', this.characters().length);
-      },
+    this.characterService.getAllCharacters().subscribe({
+      next: (data) => this.characters.set(data),
       error: (err) => console.error('ERROR:', err)
     });
   }
