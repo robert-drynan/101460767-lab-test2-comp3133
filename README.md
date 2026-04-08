@@ -1,8 +1,8 @@
 # 101460767LabTest2Comp3133
 
-![home page] (src/screenshots/Screenshot 2026-04-08 173740.png)
+![Home Page](src/screenshots/home.png)
 
-![details page](src/screenshots/Screenshot 2026-04-08 173745.png)
+![Details Page](src/screenshots/details.png)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
 
