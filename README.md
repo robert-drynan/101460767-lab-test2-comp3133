@@ -1,5 +1,7 @@
 # 101460767LabTest2Comp3133
 
+a page to see the characters in harry potter and see more info if they are clciked in
+
 ![Home Page](src/screenshots/home.png)
 
 ![Details Page](src/screenshots/details.png)
